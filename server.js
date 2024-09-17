@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(bodyParser.json());
 
-app.post('/api/create-payment-intent', async (req, res) => {
+app.post('/create-payment-intent', async (req, res) => {
   try {
     const { amount } = req.body;
     const paymentIntent = await stripe.paymentIntents.create({
